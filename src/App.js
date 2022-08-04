@@ -66,19 +66,6 @@ function GameOver(s) {
       (GAME.WINNING_BLOCKS = [2, 5, 8])
     );
   }
-
-  // if (
-  //   (s[4] &&
-  //     ((s[4] === s[0] && s[4] === s[8]) ||
-  //       (s[4] === s[6] && s[4] === s[2]) ||
-  //       (s[4] === s[3] && s[4] === s[5]) ||
-  //       (s[4] === s[1] && s[4] === s[7]))) ||
-  //   (s[0] &&
-  //     ((s[0] === s[1] && s[0] === s[2]) || (s[0] === s[3] && s[0] === s[6]))) ||
-  //   (s[8] &&
-  //     ((s[8] === s[7] && s[8] === s[6]) || (s[8] === s[5] && s[8] === s[2])))
-  // ) {
-  //   return (GAME.END = `${GAME.XO[GAME.ROUND - 1]} WINS`);
   if (GAME.ROUND === 9) {
     return (GAME.END = "DRAW");
   }
@@ -102,6 +89,7 @@ function reducer(state, action) {
         history,
       };
     case ACTIONS.GO_BACK:
+      GAME.WINNING_BLOCKS = [];
       GAME.ROUND < history.length - 1
         ? (GAME.END = false)
         : GameOver(history[history.length - 1]);
