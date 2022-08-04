@@ -1,38 +1,74 @@
-.App {
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, rgb(54, 208, 255), rgb(81, 255, 81));
+}
+
+.turn {
+  font-size: 1.5rem;
+  display: block;
+  width: 7rem;
+  margin-top: 6rem;
+  margin-left: 11.5rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tictactoe {
+  display: inline-grid;
+  grid-template: repeat(3, 6rem) / repeat(3, 6rem);
+  margin: 0 6rem 6rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tictactoe button {
+  border: 1px solid black;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.384);
+  color: black;
+  font-size: 5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.tictactoe button.winning {
+  background-color: yellow;
 }
 
-.App-link {
-  color: #61dafb;
+.tictactoe button:hover,
+.tictactoe button:focus {
+  border: 3px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+  display: inline-flex;
+  list-style: none;
+  position: absolute;
+  top: 6rem;
+}
+
+ul li button {
+  border: 1px solid black;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.658);
+  color: black;
+  font-size: 1.5rem;
+  width: 12rem;
+}
+
+.current {
+  font-weight: bolder;
+}
+
+.reverse {
+  position: absolute;
+  left: 50rem;
+  border: 1px solid black;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.658);
+  color: black;
+  font-size: 1.5rem;
+  width: 12rem;
 }
