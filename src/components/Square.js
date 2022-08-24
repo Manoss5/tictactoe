@@ -10,7 +10,6 @@ export default function Square({ val, place, dispatch }) {
           GAME.MOVES[GAME.ROUND - 1] = [
             ...[Math.floor(place / 3) + 1, (place % 3) + 1],
           ];
-          console.log(GAME.MOVES);
         }
       }}
       className={GAME.WINNING_BLOCKS.includes(place) ? "winning" : ""}
